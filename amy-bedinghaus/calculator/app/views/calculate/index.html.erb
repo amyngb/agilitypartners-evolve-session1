@@ -1,0 +1,12 @@
+<h1>Calculator</h1>
+
+<% if @num1.nil? %>
+Empty
+<% else %>
+Result: <%=@num1 %>
+<% end %>
+
+<%= form_tag({action: "calculate"}, method: "post") do %>
+    <%= hidden_field_tag(:n1, value = 1) %>
+    <%= submit_tag("1") %>
+<% end %>
