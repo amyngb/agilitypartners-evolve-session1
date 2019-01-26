@@ -1,12 +1,85 @@
 <h1>Calculator</h1>
 
-<% if @num1.nil? %>
-Empty
-<% else %>
-Result: <%=@num1 %>
-<% end %>
-
-<%= form_tag({action: "calculate"}, method: "post") do %>
-    <%= hidden_field_tag(:n1, value = 1) %>
-    <%= submit_tag("1") %>
-<% end %>
+<p>Result: <%= @num1 %> <%= @operation %> <%= @num2 %> = <%= @result %></p>
+<table>
+    <tr>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="1") %>
+                <%= submit_tag("1") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="2") %>
+                <%= submit_tag("2") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="3") %>
+                <%= submit_tag("3") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(:op, value="+") %>
+                <%= submit_tag("+") %>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="4") %>
+                <%= submit_tag("4") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="5") %>
+                <%= submit_tag("5") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="6") %>
+                <%= submit_tag("6") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(:op, value="-") %>
+                <%= submit_tag("-") %>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="7") %>
+                <%= submit_tag("7") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="8") %>
+                <%= submit_tag("8") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(@num1.nil? ? :n1 : :n2, value="9") %>
+                <%= submit_tag("9") %>
+            <% end %>
+        </td>
+        <td>
+            <%= form_tag({action: "calculate"}, method: "post") do %>
+                <%= hidden_field_tag(:n1, value = @num1) %>
+                <%= hidden_field_tag(:n2, value = @num2) %>
+                <%= hidden_field_tag(:op, value = @operation) %>
+                <%= submit_tag("=") %>
+            <% end %>
+        </td>
+    </tr>
+</table>
