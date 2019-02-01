@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :set_companies, only: [:new, :edit]
 
   # GET /employees
   # GET /employees.json
@@ -14,7 +15,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
-    @employee = Employee.new
+    @employee = Employee.new    
   end
 
   # GET /employees/1/edit
@@ -24,7 +25,7 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
-    @employee = Employee.new(employee_params)
+    @employee = Employee.new(employee_params)    
 
     respond_to do |format|
       if @employee.save
@@ -67,6 +68,10 @@ class EmployeesController < ApplicationController
       @employee = Employee.find(params[:id])
     end
 
+    def set_companies
+      @companies = Company.all
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
       params.require(:employee).permit(:name, :company_id)

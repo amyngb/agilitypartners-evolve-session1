@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :company_id %>
-    <%= form.number_field :company_id, id: :employee_company_id %>
+    <%= form.label "Company" %>
+    <%= form.select(:company_id, options_for_select(@companies.map { |c| [c.name, c.id] })) %></p>
   </div>
 
   <div class="actions">

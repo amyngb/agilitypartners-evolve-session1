@@ -3,6 +3,7 @@ class CreateEmployees < ActiveRecord::Migration[5.1]
     create_table :employees do |t|
       t.string :name
       t.integer :company_id
+      t.belongs_to :company, index: true
 
       t.timestamps
     end
