@@ -6,11 +6,6 @@ class EmployeesController < ApplicationController
     @name_results = Employee.partial_string_match(params[:name])
   end
 
-  def post_search
-    @name_results = Employee.partial_string_match(params[:name])
-    render :search
-  end
-  
   # GET /employees
   # GET /employees.json
   def index

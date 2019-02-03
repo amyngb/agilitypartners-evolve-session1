@@ -1,5 +1,5 @@
 <h2>Filter Employees</h2>
-<%= form_tag({action: "post_search"}, method: "get") do %>
+<%= form_tag({action: "search"}, method: "get") do %>
     <%= label_tag(:name, "Name") %>
     <%= text_field_tag(:name) %>
     <%= submit_tag("Search") %>
@@ -7,26 +7,25 @@
 
 <br>
 
-<% if @search_string != '' %>
-    <table>
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Company</th>
-        <th colspan="3"></th>
-        </tr>
-    </thead>
 
-    <tbody>
-        <% @name_results.each do |employee| %>
-        <tr>
-            <td><%= employee.name %></td>
-            <td><%= employee.company.name %> </td>
-            <td><%= link_to 'Show', employee %></td>
-            <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-            <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-    </tbody>
-    </table>
-<% end %>       
+<table>
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Company</th>
+    <th colspan="3"></th>
+    </tr>
+</thead>
+
+<tbody>
+    <% @name_results.each do |employee| %>
+    <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.company.name %> </td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+</tbody>
+</table>
