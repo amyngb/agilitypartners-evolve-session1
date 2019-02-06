@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_id: 1
+  in_time: 2019-02-05 18:56:00
+  out_time: 2019-02-05 18:56:00
+  sending_device: MyString
+
+two:
+  device_id: 1
+  in_time: 2019-02-05 18:56:00
+  out_time: 2019-02-05 18:56:00
+  sending_device: MyString

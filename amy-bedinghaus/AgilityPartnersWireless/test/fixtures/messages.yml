@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message_body: MyText
+  time_sent: 2019-02-05 18:49:15
+  conversation_id: 1
+
+two:
+  message_body: MyText
+  time_sent: 2019-02-05 18:49:15
+  conversation_id: 1
